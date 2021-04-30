@@ -64,4 +64,21 @@ function moveHorizont(grids, move) {
             }
     })
     return res;
+};
+
+function rowInColum(grids) {
+    let turnArr = [];
+    for(j = 0; j < grids.length; j += 1){
+        turnArr.push([]);
+        for(i = 0; i < grids[j].length; i += 1){
+            turnArr[j].push('');
+        }
+    }
+    
+    for(j = 0; j < grids.length; j += 1){
+        for(i = 0; i < grids.length; i += 1){
+            turnArr[i][j] = grids[j][i];
+        }
+    }
+    return turnArr;
 }

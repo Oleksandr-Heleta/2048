@@ -37,8 +37,17 @@ class MatrixModel extends BaseModel {
         if (key === 'left' || key === 'right') {
             this.attributes.grid = moveHorizont(this.attributes.grid, key);
         } else {
-
+            let turnGrids = rowInColum(this.attributes.grid);
+            if(key === 'up'){
+                turnGrids = moveHorizont(turnGrids, 'left');
+            } else{
+                turnGrids = moveHorizont(turnGrids, 'right');
+            }
+            this.attributes.grid = rowInColum(turnGrids);
         }
+        // if (this.attributes.grid.indexOf('') < 0) {
+        //     alert('Press NEW GAME')
+        // }
         randomGrid(this.attributes.grid, this.attributes.size.height,  this.attributes.size.width);
         this.publish('changeData');
     }
