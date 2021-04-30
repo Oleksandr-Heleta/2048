@@ -5,7 +5,7 @@ class MatrixView extends BaseView {
         this.controller = new Controller();
         this.template = document.getElementById('matrixTemplate').innerHTML;
         this.className = 'table';
-        // BaseView.call(this);    На что влияет???
+       
     }
 
 

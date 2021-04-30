@@ -3,7 +3,7 @@ class SummaryModel extends BaseModel {
         super();
         this.attributes = {
             totalScore: 0,
-            bestScore: 0,
+            bestScore: JSON.parse(localStorage.getItem('bestScore')) || 0,
         }
         if (!SummaryModel.instance) {
             SummaryModel.instance = this
@@ -13,7 +13,16 @@ class SummaryModel extends BaseModel {
     }
    
     startNewGame() {
-        this.attributes.totalScore = 10;
+        this.attributes.totalScore = 0;
+        this.publish('changeData');
+    }
+
+    makeActionByKey(){
+        this.attributes.totalScore +=1; // Conect to matrixModel
+        if (this.attributes.totalScore > this.attributes.bestScore){
+            this.attributes.bestScore = this.attributes.totalScore;
+            localStorage.setItem('bestScore', JSON.stringify(this.attributes.bestScore));
+        }
         this.publish('changeData');
     }
 };

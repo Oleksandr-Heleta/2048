@@ -23,6 +23,7 @@ class Controller {
             return;
         }
         this.matrixModel.makeActionByKey(key);
+        this.summaryModel.makeActionByKey()
     }
 
     onClickNewGame() {

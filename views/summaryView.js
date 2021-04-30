@@ -3,7 +3,7 @@ class SummaryView extends BaseView {
         super ();
         this.summaryModel = new SummaryModel();
         this.template = document.getElementById('summaryTemplate').innerHTML;
-        // BaseView.call(this);
+        
     }
 
 

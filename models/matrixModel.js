@@ -1,7 +1,6 @@
 class MatrixModel extends BaseModel {
     constructor() {
         super();
-        // BaseModel.call(this);
         this.attributes = {
             size: {
                 width: 4,
@@ -23,14 +22,24 @@ class MatrixModel extends BaseModel {
     }
     
     startNewGame() {
+        this.attributes.grid = [
+                            ['', '', '', ''],
+                            ['', '', '', ''],
+                            ['', '', '', ''],
+                            ['', '', '', ''],
+                        ]
         randomGrid(this.attributes.grid, this.attributes.size.height,  this.attributes.size.width);
         randomGrid(this.attributes.grid, this.attributes.size.height,  this.attributes.size.width);
         this.publish('changeData');
     }
 
     makeActionByKey(key) {
-        this.attributes.grid[1][2] = '4';
-        this.attributes.grid[2][2] = '2';
+        if (key === 'left' || key === 'right') {
+            this.attributes.grid = moveHorizont(this.attributes.grid, key);
+        } else {
+
+        }
+        randomGrid(this.attributes.grid, this.attributes.size.height,  this.attributes.size.width);
         this.publish('changeData');
     }
 };

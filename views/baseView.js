@@ -15,10 +15,9 @@ class BaseView {
     afterRender() {}
 
     reRender() {
-        console.log('reRender')
         this.beforeUpdate();
         this.rootElement.innerHTML = this.render();
-        this.afterUpdate();
+        this.afterRender(); // was be  afterUpdate() {}
     }
 
     beforeUpdate() {}

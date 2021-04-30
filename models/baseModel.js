@@ -1,7 +1,7 @@
 class BaseModel extends PubSub {
     constructor () {
         super ();
-        // new PubSub.call(this);
+        
     }
 
     clear() {
