@@ -11,7 +11,7 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function randomGrid(grids, height, width) {
+/* function randomGrid(grids, height, width) {
     let j = getRandom(0, height - 1);
     let i = getRandom(0, width - 1);
     if (grids[j][i] === '') {
@@ -20,9 +20,10 @@ function randomGrid(grids, height, width) {
     }
     return randomGrid(grids, height, width);
 };
-
-function fullArr(arr) {
+ */
+/* function fullArr(arr) {
     const stack = [];
+    let score = 0;
     for (let char of arr) {
         if (char !== '') findChar(char);
     }
@@ -32,6 +33,7 @@ function fullArr(arr) {
             if (stack[stack.length - 1].appeared === 2) {
                 stack.pop();
                 char = String(+char * 2);
+                score += char;
                 findChar(char);
 
             }
@@ -44,9 +46,9 @@ function fullArr(arr) {
         res.push(n.char);
     })
     return res;
-};
+}; */
 
-function moveHorizont(grids, move) {
+/* function moveHorizont(grids, move) {
     let res = grids.map(j => {
         let numberArr = [];
         switch (move) {
@@ -75,9 +77,9 @@ function moveHorizont(grids, move) {
         }
     })
     return res;
-};
+}; */
 
-function rowInColum(grids) {
+/* function rowInColum(grids) {
     let turnArr = [];
     for (j = 0; j < grids.length; j += 1) {
         turnArr.push([]);
@@ -92,7 +94,7 @@ function rowInColum(grids) {
         }
     }
     return turnArr;
-};
+}; */
 
 function similarArr(firstArr, secondArr) {
     if (firstArr.length !== secondArr.length) return false;

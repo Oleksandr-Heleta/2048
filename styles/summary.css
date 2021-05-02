@@ -40,7 +40,7 @@ header {
 
 .scoreAddition {
     position: absolute;
-    top: -25px;
+    top: -125px;
     left: 46px;
     color: #655e5e;
     animation: move-up 600ms ease-in;

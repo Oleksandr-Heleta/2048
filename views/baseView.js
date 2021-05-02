@@ -2,7 +2,7 @@ class BaseView {
     constructor() {
         this.rootElement = document.createElement('div');
     }
-   
+
     show(element) {
         this.beforeRender();
         this.rootElement.innerHTML = this.render();
@@ -11,15 +11,17 @@ class BaseView {
         this.afterRender();
     }
 
-    beforeRender() {}
-    afterRender() {}
+    beforeRender() { }
+    afterRender() { }
 
     reRender() {
         this.beforeUpdate();
         this.rootElement.innerHTML = this.render();
-        this.afterRender(); // was be  afterUpdate() {}
+        this.afterUpdate();
     }
 
-    beforeUpdate() {}
-    afterUpdate() {}
+    beforeUpdate() { }
+    afterUpdate() {
+
+    }
 };
