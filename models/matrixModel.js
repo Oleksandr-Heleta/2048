@@ -13,6 +13,7 @@ class MatrixModel extends BaseModel {
                 ['', '', '', ''],
             ],
             addCount: 0,
+            cell: []
         }
         if (!MatrixModel.instance) {
             MatrixModel.instance = this
@@ -23,18 +24,20 @@ class MatrixModel extends BaseModel {
     }
 
     startNewGame() {
+        this.attributes.cell = [];
         this.attributes.grid = [
             ['', '', '', ''],
             ['', '', '', ''],
             ['', '', '', ''],
             ['', '', '', ''],
-        ]
+        ];
         this.randomGrid(this.attributes);
         this.randomGrid(this.attributes);
         this.publish('changeData');
     }
 
     makeActionByKey(key) {
+        this.attributes.cell = [];
         let cloneArr = this.attributes.grid;
         if (key === 'left' || key === 'right') {
             this.attributes.grid = this.moveHorizont(this.attributes.grid, key);
@@ -58,6 +61,7 @@ class MatrixModel extends BaseModel {
         let i = getRandom(0, attributes.size.width - 1);
         if (attributes.grid[j][i] === '') {
             attributes.grid[j][i] = '2';
+            attributes.cell.push([j, i]);
             return attributes;
         }
         return this.randomGrid(attributes);
