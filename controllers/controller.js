@@ -23,7 +23,7 @@ class Controller {
                 return;
         }
         let addCount = this.matrixModel.makeActionByKey(key);
-        this.summaryModel.makeActionByKey(addCount)
+        this.summaryModel.makeActionByKey(addCount);
     }
 
     onClickNewGame() {

@@ -5,10 +5,10 @@ class SummaryModel extends BaseModel {
             totalScore: 0,
             addScore: 0,
             bestScore: JSON.parse(localStorage.getItem('bestScore')) || 0,
-        }
-        if (!SummaryModel.instance) {
-            SummaryModel.instance = this
         };
+        if (!SummaryModel.instance) {
+            SummaryModel.instance = this;
+        }
 
         return SummaryModel.instance;
     }
@@ -27,4 +27,4 @@ class SummaryModel extends BaseModel {
         }
         this.publish('changeData');
     }
-};
+}

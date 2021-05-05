@@ -22,11 +22,11 @@ class MatrixView extends BaseView {
         for (i = 0; i < attributes.size.width; i += 1) {
             str += '<div class="row">';
             for (j = 0; j < attributes.size.height; j += 1) {
-                if (attributes.cell.find((e) => { if (e[0] === i && e[1] === j) return true })) {
+                if (attributes.cell.find((e) => { if (e[0] === i && e[1] === j) return true; })) {
                     str += `<div class="cell appear-${attributes.grid[i][j]} addCell">${attributes.grid[i][j]}</div>`;
                 } else {
                     str += `<div class="cell appear-${attributes.grid[i][j]}">${attributes.grid[i][j]}</div>`;
-                };
+                }
             }
             str += '</div>';
         }
@@ -43,4 +43,4 @@ class MatrixView extends BaseView {
     afterUpdate() {
         this.afterRender();
     }
-};
+}

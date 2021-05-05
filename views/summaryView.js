@@ -26,6 +26,6 @@ class SummaryView extends BaseView {
             addScore.innerText = `+${this.summaryModel.attributes.addScore}`;
             addScore.className = 'scoreAddition';
             score.appendChild(addScore);
-        };
+        }
     }
-};
+}

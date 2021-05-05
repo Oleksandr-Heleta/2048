@@ -14,10 +14,10 @@ class MatrixModel extends BaseModel {
             ],
             addCount: 0,
             cell: []
-        }
-        if (!MatrixModel.instance) {
-            MatrixModel.instance = this
         };
+        if (!MatrixModel.instance) {
+            MatrixModel.instance = this;
+        }
 
         return MatrixModel.instance;
 
@@ -90,7 +90,7 @@ class MatrixModel extends BaseModel {
         let res = [];
         stack.forEach(n => {
             res.push(n.char);
-        })
+        });
         this.attributes.addCount += score;
         return res;
     }
@@ -123,7 +123,7 @@ class MatrixModel extends BaseModel {
                 default:
                     return;
             }
-        })
+        });
         return res;
     }
 
@@ -143,4 +143,4 @@ class MatrixModel extends BaseModel {
         }
         return turnArr;
     }
-};
+}
